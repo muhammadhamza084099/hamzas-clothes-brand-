@@ -1,12 +1,12 @@
 const products = [
-  {id:1,name:'The Essential Tee',category:'Tops',price:2400,color:'Off-white',image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80',new:true},
-  {id:2,name:'Relaxed Linen Shirt',category:'New in',price:5800,color:'Stone',image:'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=700&q=80',new:true},
-  {id:3,name:'Everyday Pleat Trouser',category:'Bottoms',price:6900,color:'Charcoal',image:'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=700&q=80'},
-  {id:4,name:'Sunday Overshirt',category:'New in',price:7200,color:'Olive',image:'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=80',new:true},
-  {id:5,name:'The Daily Cap',category:'Accessories',price:1800,color:'Black',image:'https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=700&q=80'},
-  {id:6,name:'Studio Hoodie',category:'Tops',price:4900,color:'Oat',image:'https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=700&q=80'},
-  {id:7,name:'Utility Short',category:'Bottoms',price:3900,color:'Washed black',image:'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=700&q=80'},
-  {id:8,name:'Canvas Carryall',category:'Accessories',price:3200,color:'Natural',image:'https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=700&q=80'}
+  {id:1,name:'The Essential Tee',audience:'Women',category:'Tops',price:2400,color:'Off-white',image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80',new:true},
+  {id:2,name:'Relaxed Linen Shirt',audience:'Men',category:'New in',price:5800,color:'Stone',image:'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=700&q=80',new:true},
+  {id:3,name:'Everyday Pleat Trouser',audience:'Men',category:'Bottoms',price:6900,color:'Charcoal',image:'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=700&q=80'},
+  {id:4,name:'Sunday Overshirt',audience:'Women',category:'New in',price:7200,color:'Olive',image:'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=80',new:true},
+  {id:5,name:'The Daily Cap',audience:'Children',category:'Accessories',price:1800,color:'Black',image:'https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=700&q=80'},
+  {id:6,name:'Studio Hoodie',audience:'Children',category:'Tops',price:4900,color:'Oat',image:'https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=700&q=80'},
+  {id:7,name:'Utility Short',audience:'Men',category:'Bottoms',price:3900,color:'Washed black',image:'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=700&q=80'},
+  {id:8,name:'Canvas Carryall',audience:'Women',category:'Accessories',price:3200,color:'Natural',image:'https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=700&q=80'}
 ];
 let cart = JSON.parse(localStorage.getItem('hamzas-cart') || '[]');
 let selectedCategory = 'All';
@@ -15,7 +15,7 @@ const money = value => `Rs. ${value.toLocaleString('en-PK')}`;
 function renderProducts(){
   const query = document.querySelector('[data-search-input]').value.toLowerCase();
   const sort = document.querySelector('[data-sort]').value;
-  let visible = products.filter(product => (selectedCategory === 'All' || product.category === selectedCategory || (selectedCategory === 'New in' && product.new)) && `${product.name} ${product.color}`.toLowerCase().includes(query));
+  let visible = products.filter(product => (selectedCategory === 'All' || product.audience === selectedCategory || product.category === selectedCategory || (selectedCategory === 'New in' && product.new)) && `${product.name} ${product.color}`.toLowerCase().includes(query));
   if(sort === 'low') visible.sort((a,b)=>a.price-b.price);
   if(sort === 'high') visible.sort((a,b)=>b.price-a.price);
   document.querySelector('[data-no-results]').hidden = visible.length > 0;
