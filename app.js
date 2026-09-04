@@ -20,6 +20,15 @@ let cart = JSON.parse(localStorage.getItem('hamzas-cart') || '[]');
 let selectedCategory = 'All';
 const grid = document.querySelector('[data-product-grid]');
 const money = value => `Rs. ${value.toLocaleString('en-PK')}`;
+const heroSlides = [
+  {eyebrow:'The everyday edit / 2026',title:'Wear your<br><em>point of view.</em>',lede:'Thoughtful layers, easy silhouettes and the small details that make a look yours.',caption:'New season silhouettes',image:'https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=1200&fm=webp&q=85',alt:'Man wearing a relaxed neutral fashion look'},
+  {eyebrow:'Built for the everyday',title:'Good clothes<br><em>go places.</em>',lede:'Relaxed tailoring, considered fabric and a little more room to move through the day.',caption:'Easy structure / soft confidence',image:'https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=1200&fm=webp&q=85',alt:'Man wearing a contemporary dark outfit'},
+  {eyebrow:'The new uniform',title:'Make room<br><em>for more.</em>',lede:'Versatile layers designed to work hard, wear well and keep your point of view intact.',caption:'The layers edit',image:'https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1200&fm=webp&q=85',alt:'Man in a modern layered fashion look'},
+  {eyebrow:'Hamzas / Made locally',title:'Find your<br><em>everyday.</em>',lede:'Pieces with an honest feel, made for real routines and the life that happens between plans.',caption:'Made for movement',image:'https://images.unsplash.com/photo-1506629905607-d9b1c4f6c0f4?auto=format&fit=crop&w=1200&fm=webp&q=85',alt:'Man wearing a relaxed casual outfit'}
+];
+let heroIndex = 0;
+function renderHero(){const slide=heroSlides[heroIndex];document.querySelector('[data-hero-eyebrow]').textContent=slide.eyebrow;document.querySelector('[data-hero-title]').innerHTML=slide.title;document.querySelector('[data-hero-lede]').textContent=slide.lede;const image=document.querySelector('[data-hero-image]');image.classList.add('is-changing');setTimeout(()=>{image.src=slide.image;image.alt=slide.alt;image.classList.remove('is-changing')},180);document.querySelector('[data-hero-count]').textContent=`${String(heroIndex+1).padStart(2,'0')} / ${String(heroSlides.length).padStart(2,'0')}`;document.querySelector('[data-hero-caption]').textContent=slide.caption;document.querySelector('[data-hero-dots]').innerHTML=heroSlides.map((_,index)=>`<button class="hero-dot${index===heroIndex?' active':''}" data-hero-slide="${index}" aria-label="Show hero slide ${index+1}"></button>`).join('')}
+function changeHero(direction){heroIndex=(heroIndex+direction+heroSlides.length)%heroSlides.length;renderHero()}
 function renderProducts(){
   const query = document.querySelector('[data-search-input]').value.toLowerCase();
   const sort = document.querySelector('[data-sort]').value;
@@ -63,9 +72,15 @@ document.addEventListener('click', event => {
   if(modalAdd){const id=Number(modalAdd.dataset.add);if(!cart.includes(id)){cart.push(id);renderCart();showToast('Added to your bag')}else showToast('Already in your bag');closeModals()}
   const size = event.target.closest('[data-size-options] button');
   if(size){document.querySelectorAll('[data-size-options] button').forEach(button=>button.classList.toggle('selected',button===size))}
+  if(event.target.closest('[data-hero-prev]')) changeHero(-1);
+  if(event.target.closest('[data-hero-next]')) changeHero(1);
+  const heroSlide = event.target.closest('[data-hero-slide]');
+  if(heroSlide){heroIndex=Number(heroSlide.dataset.heroSlide);renderHero()}
 });
 document.querySelector('[data-checkout-form]').addEventListener('submit', async event => {event.preventDefault();const form=event.target;const submit=form.querySelector('[type="submit"]');submit.disabled=true;submit.querySelector('span').textContent='…';const payload={name:form.name.value,phone:form.phone.value,address:form.address.value,payment:form.payment.value,items:cart.map(id=>({id}))};try{const response=location.protocol==='file:'?null:await fetch('/api/orders',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});if(response && !response.ok)throw new Error((await response.json()).error||'Order failed');const order=response?await response.json():{reference:`DEMO-${Date.now().toString().slice(-6)}`};document.querySelector('[data-order-reference]').textContent=order.reference;cart=[];renderCart();closeModals();openModal('[data-confirmation-modal]');form.reset()}catch(error){showToast(error.message)}finally{submit.disabled=false;submit.querySelector('span').textContent='↗'}});
 document.querySelector('[data-search-input]').addEventListener('input',renderProducts);
 document.querySelector('[data-sort]').addEventListener('change',renderProducts);
 renderProducts();
 renderCart();
+renderHero();
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(()=>changeHero(1),5000);

@@ -7,6 +7,7 @@
   <meta property="og:title" content="Hamzas Brand Shop">
   <meta property="og:description" content="New-season essentials with a confident point of view.">
   <title>Hamzas Brand Shop | New season, your way</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -36,15 +37,16 @@
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow">The everyday edit / 2026</p>
-        <h1 id="hero-title">Wear your<br><em>point of view.</em></h1>
-        <p class="hero-lede">Thoughtful layers, easy silhouettes and the small details that make a look yours.</p>
+      <div class="hero-copy" data-hero-copy>
+        <p class="eyebrow" data-hero-eyebrow>The everyday edit / 2026</p>
+        <h1 id="hero-title" data-hero-title>Wear your<br><em>point of view.</em></h1>
+        <p class="hero-lede" data-hero-lede>Thoughtful layers, easy silhouettes and the small details that make a look yours.</p>
         <a class="button button-dark" href="#shop">Explore the collection <span>↘</span></a>
       </div>
       <div class="hero-image-wrap">
-        <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=1200&fm=webp&q=85" alt="Man wearing a relaxed neutral fashion look">
-        <div class="image-note">01 / 04<br><span>New season silhouettes</span></div>
+        <img data-hero-image src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=1200&fm=webp&q=85" alt="Man wearing a relaxed neutral fashion look">
+        <div class="image-note"><span data-hero-count>01 / 04</span><br><span data-hero-caption>New season silhouettes</span></div>
+        <div class="hero-controls"><button data-hero-prev aria-label="Previous hero slide">←</button><div class="hero-dots" data-hero-dots></div><button data-hero-next aria-label="Next hero slide">→</button></div>
       </div>
       <div class="hero-stamp">H<br>A<br>M<br>Z<br>A<br>S</div>
     </section>
