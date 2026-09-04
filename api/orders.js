@@ -8,7 +8,11 @@ const catalog = {
   5: { name: 'The Daily Cap', price: 1800 },
   6: { name: 'Studio Hoodie', price: 4900 },
   7: { name: 'Utility Short', price: 3900 },
-  8: { name: 'Canvas Carryall', price: 3200 }
+  8: { name: 'Canvas Carryall', price: 3200 },
+  9: { name: 'Mini Studio Hoodie', price: 3200 },
+  10: { name: 'Everyday Kids Jogger', price: 2800 },
+  11: { name: 'The Daily Kids Cap', price: 1800 },
+  12: { name: 'Playday Overshirt', price: 3600 }
 };
 
 function send(res, status, body) {

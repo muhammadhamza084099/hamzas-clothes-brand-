@@ -1,12 +1,16 @@
 const products = [
-  {id:1,name:'The Essential Tee',audience:'Women',category:'Tops',price:2400,color:'Off-white',image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80',new:true},
-  {id:2,name:'Relaxed Linen Shirt',audience:'Men',category:'New in',price:5800,color:'Stone',image:'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=700&q=80',new:true},
-  {id:3,name:'Everyday Pleat Trouser',audience:'Men',category:'Bottoms',price:6900,color:'Charcoal',image:'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=700&q=80'},
-  {id:4,name:'Sunday Overshirt',audience:'Women',category:'New in',price:7200,color:'Olive',image:'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=80',new:true},
-  {id:5,name:'The Daily Cap',audience:'Children',category:'Accessories',price:1800,color:'Black',image:'https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=700&q=80'},
-  {id:6,name:'Studio Hoodie',audience:'Children',category:'Tops',price:4900,color:'Oat',image:'https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=700&q=80'},
-  {id:7,name:'Utility Short',audience:'Men',category:'Bottoms',price:3900,color:'Washed black',image:'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=700&q=80'},
-  {id:8,name:'Canvas Carryall',audience:'Women',category:'Accessories',price:3200,color:'Natural',image:'https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=700&q=80'}
+  {id:1,name:'Oxford Linen Shirt',audience:'Men',category:'Tops',price:5800,color:'Stone',image:'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=700&q=80',new:true},
+  {id:2,name:'Everyday Pleat Trouser',audience:'Men',category:'Bottoms',price:6900,color:'Charcoal',image:'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=700&q=80'},
+  {id:3,name:'Relaxed Utility Short',audience:'Men',category:'Bottoms',price:3900,color:'Washed black',image:'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=700&q=80'},
+  {id:4,name:'Heavyweight Polo',audience:'Men',category:'Tops',price:4200,color:'Forest green',image:'https://images.unsplash.com/photo-1586790170083-2f9ceade7a5b?auto=format&fit=crop&w=700&q=80',new:true},
+  {id:5,name:'The Essential Tee',audience:'Women',category:'Tops',price:2400,color:'Off-white',image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80'},
+  {id:6,name:'Satin Slip Dress',audience:'Women',category:'Dresses',price:7600,color:'Terracotta',image:'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=700&q=80',new:true},
+  {id:7,name:'Wide Leg Trouser',audience:'Women',category:'Bottoms',price:6400,color:'Ecru',image:'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80'},
+  {id:8,name:'Canvas Carryall',audience:'Women',category:'Accessories',price:3200,color:'Natural',image:'https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=700&q=80'},
+  {id:9,name:'Mini Studio Hoodie',audience:'Children',category:'Tops',price:3200,color:'Oat',image:'https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=700&q=80',new:true},
+  {id:10,name:'Everyday Kids Jogger',audience:'Children',category:'Bottoms',price:2800,color:'Heather grey',image:'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=700&q=80'},
+  {id:11,name:'The Daily Kids Cap',audience:'Children',category:'Accessories',price:1800,color:'Black',image:'https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=700&q=80'},
+  {id:12,name:'Playday Overshirt',audience:'Children',category:'Tops',price:3600,color:'Olive',image:'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=80'}
 ];
 let cart = JSON.parse(localStorage.getItem('hamzas-cart') || '[]');
 let selectedCategory = 'All';
@@ -19,7 +23,7 @@ function renderProducts(){
   if(sort === 'low') visible.sort((a,b)=>a.price-b.price);
   if(sort === 'high') visible.sort((a,b)=>b.price-a.price);
   document.querySelector('[data-no-results]').hidden = visible.length > 0;
-  grid.innerHTML = visible.map(product => `<article class="product-card" data-product="${product.id}"><div class="product-image"><img src="${product.image}" alt="${product.name}, ${product.color}" loading="lazy">${product.new ? '<span class="product-badge">New in</span>' : ''}<button class="quick-add" data-add="${product.id}">Add to bag +</button></div><div class="product-info"><div><p class="product-name">${product.name}</p><p class="product-meta">${product.color}</p></div><p class="product-price">${money(product.price)}</p></div></article>`).join('');
+  grid.innerHTML = visible.map(product => `<article class="product-card" data-product="${product.id}"><div class="product-image"><img src="${product.image}" alt="${product.audience}'s ${product.name}, ${product.color}" loading="lazy">${product.new ? '<span class="product-badge">New in</span>' : ''}<button class="quick-add" data-add="${product.id}">Add to bag +</button></div><div class="product-info"><div><p class="product-name">${product.name}</p><p class="product-meta">${product.audience} / ${product.color}</p></div><p class="product-price">${money(product.price)}</p></div></article>`).join('');
 }
 function renderCart(){
   const items = cart.map(id => products.find(product => product.id === id)).filter(Boolean);
