@@ -2,7 +2,7 @@ const products = [
   {id:1,name:'Oxford Linen Shirt',audience:'Men',category:'Shirts',price:5800,color:'Stone',image:'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=700&q=80',new:true},
   {id:2,name:'Everyday Pleat Trouser',audience:'Men',category:'Bottoms',price:6900,color:'Charcoal',image:'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=700&q=80'},
   {id:3,name:'Relaxed Utility Short',audience:'Men',category:'Bottoms',price:3900,color:'Washed black',image:'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=700&q=80'},
-  {id:4,name:'Heavyweight Polo',audience:'Men',category:'Tops',price:4200,color:'Forest green',image:'https://images.unsplash.com/photo-1586790170083-2f9ceade7a5b?auto=format&fit=crop&w=700&q=80',new:true},
+  {id:4,name:'Heavyweight Polo',audience:'Men',category:'Tops',price:4200,color:'Forest green',image:'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=700&q=80',new:true},
   {id:5,name:'The Essential Tee',audience:'Women',category:'Tops',price:2400,color:'Off-white',image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80'},
   {id:6,name:'Satin Slip Dress',audience:'Women',category:'Dresses',price:7600,color:'Terracotta',image:'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=700&q=80',new:true},
   {id:7,name:'Wide Leg Trouser',audience:'Women',category:'Bottoms',price:6400,color:'Ecru',image:'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80'},
