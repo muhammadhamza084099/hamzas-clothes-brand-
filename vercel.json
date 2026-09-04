@@ -1,6 +1,13 @@
 {
   "cleanUrls": false,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/products/catalog.js", "destination": "/catalog.js" },
+    { "source": "/products/product-page.js", "destination": "/product-page.js" },
+    { "source": "/products/styles.css", "destination": "/styles.css" },
+    { "source": "/products/favicon.svg", "destination": "/favicon.svg" },
+    { "source": "/products/:slug", "destination": "/product.html?slug=:slug" }
+  ],
   "headers": [
     {
       "source": "/(.*)",

@@ -3,10 +3,13 @@ CREATE TABLE IF NOT EXISTS orders (
   reference VARCHAR(24) UNIQUE NOT NULL,
   customer_name VARCHAR(120) NOT NULL,
   phone VARCHAR(32) NOT NULL,
+  email VARCHAR(160),
   address TEXT NOT NULL,
+  city VARCHAR(80) NOT NULL,
   payment_method VARCHAR(40) NOT NULL DEFAULT 'Cash on delivery',
   total INTEGER NOT NULL CHECK (total >= 0),
   status VARCHAR(24) NOT NULL DEFAULT 'PENDING',
+  idempotency_key VARCHAR(100) UNIQUE,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
@@ -15,6 +18,16 @@ CREATE TABLE IF NOT EXISTS order_items (
   order_reference VARCHAR(24) NOT NULL REFERENCES orders(reference) ON DELETE CASCADE,
   product_name VARCHAR(160) NOT NULL,
   unit_price INTEGER NOT NULL CHECK (unit_price >= 0)
+  ,quantity INTEGER NOT NULL DEFAULT 1 CHECK (quantity > 0)
+  ,size VARCHAR(12)
+  ,color VARCHAR(40)
 );
 
 CREATE INDEX IF NOT EXISTS orders_status_created_idx ON orders(status, created_at DESC);
+
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS email VARCHAR(160);
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS city VARCHAR(80);
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS idempotency_key VARCHAR(100) UNIQUE;
+ALTER TABLE order_items ADD COLUMN IF NOT EXISTS quantity INTEGER NOT NULL DEFAULT 1;
+ALTER TABLE order_items ADD COLUMN IF NOT EXISTS size VARCHAR(12);
+ALTER TABLE order_items ADD COLUMN IF NOT EXISTS color VARCHAR(40);

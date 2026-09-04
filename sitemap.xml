@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://your-domain.vercel.app/</loc></url>
+  <url><loc>https://your-domain.vercel.app/about.html</loc></url>
+  <url><loc>https://your-domain.vercel.app/contact.html</loc></url>
+  <url><loc>https://your-domain.vercel.app/faq.html</loc></url>
+  <url><loc>https://your-domain.vercel.app/shipping.html</loc></url>
+  <url><loc>https://your-domain.vercel.app/returns.html</loc></url>
+  <url><loc>https://your-domain.vercel.app/size-guide.html</loc></url>
+  <url><loc>https://your-domain.vercel.app/privacy.html</loc></url>
+  <url><loc>https://your-domain.vercel.app/terms.html</loc></url>
+  <url><loc>https://your-domain.vercel.app/products/oxford-linen-shirt</loc></url>
+  <url><loc>https://your-domain.vercel.app/products/everyday-pleat-trouser</loc></url>
+  <url><loc>https://your-domain.vercel.app/products/relaxed-utility-short</loc></url>
+  <url><loc>https://your-domain.vercel.app/products/heavyweight-polo</loc></url>
+  <url><loc>https://your-domain.vercel.app/products/essential-tee</loc></url>
+  <url><loc>https://your-domain.vercel.app/products/satin-slip-dress</loc></url>
+  <url><loc>https://your-domain.vercel.app/products/wide-leg-trouser</loc></url>
+  <url><loc>https://your-domain.vercel.app/products/canvas-carryall</loc></url>
+  <url><loc>https://your-domain.vercel.app/products/mini-studio-hoodie</loc></url>
+  <url><loc>https://your-domain.vercel.app/products/everyday-kids-jogger</loc></url>
+  <url><loc>https://your-domain.vercel.app/products/daily-kids-cap</loc></url>
+  <url><loc>https://your-domain.vercel.app/products/playday-overshirt</loc></url>
+  <url><loc>https://your-domain.vercel.app/products/everyday-cotton-shirt</loc></url>
+  <url><loc>https://your-domain.vercel.app/products/relaxed-poplin-blouse</loc></url>
+  <url><loc>https://your-domain.vercel.app/products/kids-camp-shirt</loc></url>
+  <url><loc>https://your-domain.vercel.app/products/striped-resort-shirt</loc></url>
 </urlset>
