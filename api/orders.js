@@ -12,7 +12,11 @@ const catalog = {
   9: { name: 'Mini Studio Hoodie', price: 3200 },
   10: { name: 'Everyday Kids Jogger', price: 2800 },
   11: { name: 'The Daily Kids Cap', price: 1800 },
-  12: { name: 'Playday Overshirt', price: 3600 }
+  12: { name: 'Playday Overshirt', price: 3600 },
+  13: { name: 'Everyday Cotton Shirt', price: 4600 },
+  14: { name: 'Relaxed Poplin Blouse', price: 5200 },
+  15: { name: 'Kids Camp Shirt', price: 2900 },
+  16: { name: 'Striped Resort Shirt', price: 5400 }
 };
 
 function send(res, status, body) {
