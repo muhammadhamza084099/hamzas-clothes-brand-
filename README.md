@@ -2,6 +2,8 @@
 
 A brand-first, mobile-first storefront for Hamzas Brand Shop. The current release is a zero-dependency frontend prototype that runs directly from `index.html`.
 
+Business contact: Hamzas Brand Shop, Peshawar · muhammadhamza3758@gmail.com
+
 ## Run locally
 
 Open [index.html](index.html) in a browser. Product images are loaded from Unsplash, so an internet connection is needed for the full visual experience. The file preview uses a demo order reference; deployed checkout submits to the Vercel order API.
