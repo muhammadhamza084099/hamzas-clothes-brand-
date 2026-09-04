@@ -1,20 +1,20 @@
 const products = [
-  {id:1,name:'Oxford Linen Shirt',audience:'Men',category:'Shirts',price:5800,color:'Stone',image:'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=700&q=80',new:true},
-  {id:2,name:'Everyday Pleat Trouser',audience:'Men',category:'Bottoms',price:6900,color:'Charcoal',image:'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=700&q=80'},
-  {id:3,name:'Relaxed Utility Short',audience:'Men',category:'Bottoms',price:3900,color:'Washed black',image:'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=700&q=80'},
-  {id:4,name:'Heavyweight Polo',audience:'Men',category:'Tops',price:4200,color:'Forest green',image:'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=700&q=80',new:true},
-  {id:5,name:'The Essential Tee',audience:'Women',category:'Tops',price:2400,color:'Off-white',image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80'},
-  {id:6,name:'Satin Slip Dress',audience:'Women',category:'Dresses',price:7600,color:'Terracotta',image:'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=700&q=80',new:true},
-  {id:7,name:'Wide Leg Trouser',audience:'Women',category:'Bottoms',price:6400,color:'Ecru',image:'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80'},
-  {id:8,name:'Canvas Carryall',audience:'Women',category:'Accessories',price:3200,color:'Natural',image:'https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=700&q=80'},
-  {id:9,name:'Mini Studio Hoodie',audience:'Children',category:'Tops',price:3200,color:'Oat',image:'https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=700&q=80',new:true},
-  {id:10,name:'Everyday Kids Jogger',audience:'Children',category:'Bottoms',price:2800,color:'Heather grey',image:'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=700&q=80'},
-  {id:11,name:'The Daily Kids Cap',audience:'Children',category:'Accessories',price:1800,color:'Black',image:'https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=700&q=80'},
-  {id:12,name:'Playday Overshirt',audience:'Children',category:'Shirts',price:3600,color:'Olive',image:'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=80'},
-  {id:13,name:'Everyday Cotton Shirt',audience:'Men',category:'Shirts',price:4600,color:'White',image:'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=700&q=80'},
-  {id:14,name:'Relaxed Poplin Blouse',audience:'Women',category:'Shirts',price:5200,color:'Sky blue',image:'https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=700&q=80',new:true},
-  {id:15,name:'Kids Camp Shirt',audience:'Children',category:'Shirts',price:2900,color:'Sage',image:'https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=700&q=80'},
-  {id:16,name:'Striped Resort Shirt',audience:'Men',category:'Shirts',price:5400,color:'Navy stripe',image:'https://images.unsplash.com/photo-1563630423918-b58f07336ac9?auto=format&fit=crop&w=700&q=80',new:true}
+  {id:1,name:'Oxford Linen Shirt',audience:'Men',category:'Shirts',price:5800,color:'Stone',image:'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=700&fm=webp&q=80',new:true},
+  {id:2,name:'Everyday Pleat Trouser',audience:'Men',category:'Bottoms',price:6900,color:'Charcoal',image:'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=700&fm=webp&q=80'},
+  {id:3,name:'Relaxed Utility Short',audience:'Men',category:'Bottoms',price:3900,color:'Washed black',image:'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=700&fm=webp&q=80'},
+  {id:4,name:'Heavyweight Polo',audience:'Men',category:'Tops',price:4200,color:'Forest green',image:'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=700&fm=webp&q=80',new:true},
+  {id:5,name:'The Essential Tee',audience:'Women',category:'Tops',price:2400,color:'Off-white',image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&fm=webp&q=80'},
+  {id:6,name:'Satin Slip Dress',audience:'Women',category:'Dresses',price:7600,color:'Terracotta',image:'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=700&fm=webp&q=80',new:true},
+  {id:7,name:'Wide Leg Trouser',audience:'Women',category:'Bottoms',price:6400,color:'Ecru',image:'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&fm=webp&q=80'},
+  {id:8,name:'Canvas Carryall',audience:'Women',category:'Accessories',price:3200,color:'Natural',image:'https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=700&fm=webp&q=80'},
+  {id:9,name:'Mini Studio Hoodie',audience:'Children',category:'Tops',price:3200,color:'Oat',image:'https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=700&fm=webp&q=80',new:true},
+  {id:10,name:'Everyday Kids Jogger',audience:'Children',category:'Bottoms',price:2800,color:'Heather grey',image:'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=700&fm=webp&q=80'},
+  {id:11,name:'The Daily Kids Cap',audience:'Children',category:'Accessories',price:1800,color:'Black',image:'https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=700&fm=webp&q=80'},
+  {id:12,name:'Playday Overshirt',audience:'Children',category:'Shirts',price:3600,color:'Olive',image:'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&fm=webp&q=80'},
+  {id:13,name:'Everyday Cotton Shirt',audience:'Men',category:'Shirts',price:4600,color:'White',image:'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=700&fm=webp&q=80'},
+  {id:14,name:'Relaxed Poplin Blouse',audience:'Women',category:'Shirts',price:5200,color:'Sky blue',image:'https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=700&fm=webp&q=80',new:true},
+  {id:15,name:'Kids Camp Shirt',audience:'Children',category:'Shirts',price:2900,color:'Sage',image:'https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=700&fm=webp&q=80'},
+  {id:16,name:'Striped Resort Shirt',audience:'Men',category:'Shirts',price:5400,color:'Navy stripe',image:'https://images.unsplash.com/photo-1563630423918-b58f07336ac9?auto=format&fit=crop&w=700&fm=webp&q=80',new:true}
 ];
 let cart = JSON.parse(localStorage.getItem('hamzas-cart') || '[]');
 let selectedCategory = 'All';
