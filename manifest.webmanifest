@@ -1,0 +1,10 @@
+{
+  "name": "Hamzas Brand Shop",
+  "short_name": "Hamzas",
+  "description": "Everyday clothing with a point of view from Peshawar.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111416",
+  "theme_color": "#111416",
+  "icons": [{"src":"favicon.svg","sizes":"any","type":"image/svg+xml"}]
+}

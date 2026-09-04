@@ -12,6 +12,10 @@ Open [index.html](index.html) in a browser. Product images are loaded from Unspl
 
 Import this folder as a Vercel project and use the default settings. Vercel will install the dependency for the serverless order API; no build command or output directory is required. Create a Vercel Postgres database, run [database.sql](database.sql), and link it to the project so the `POSTGRES_*` variables are available. After deployment, replace `your-domain.vercel.app` in `robots.txt` and `sitemap.xml` with the real domain.
 
+## Google Search Console
+
+The verification file [google1c263acfdd0898e5.html](google1c263acfdd0898e5.html) is in the repository root, which is the correct location for Google file verification. The homepage also includes the matching verification meta tag, canonical URL, Open Graph/Twitter metadata, JSON-LD local business schema, robots directives, sitemap, and web app manifest. After the first Vercel deployment, replace every `your-domain.vercel.app` placeholder with the real production domain, redeploy, and then verify the domain in Search Console.
+
 ## Configuration
 
 `.env.example` is the safe template for future local configuration. Copy it to `.env` when a backend is added, then replace the placeholder values. `.env` is ignored by Git and must never be committed.
